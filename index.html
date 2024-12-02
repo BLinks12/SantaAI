@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SantaAI ($HOHO)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        body {
+            font-family: 'VT323', monospace;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 1.5em;
+        }
+        nav a {
+            text-decoration: none;
+            color: #ff0000;
+        }
+        .title {
+            font-size: 3em;
+            margin: 40px 0;
+            color: #ff4500;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4500;
+        }
+        .ascii-art {
+            white-space: pre;
+            margin: 40px auto;
+            font-size: 12px;
+            color: #00ff00;
+            line-height: 1.3;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #00ff00;
+                transform: translate(0, 0);
+            }
+            25% {
+                text-shadow: -2px -2px 0 #ff0000, 2px 2px 0 #00ff00;
+                transform: translate(2px, -2px);
+            }
+            50% {
+                text-shadow: 2px -2px 0 #ff0000, -2px 2px 0 #00ff00;
+                transform: translate(-2px, 2px);
+            }
+            75% {
+                text-shadow: -2px 2px 0 #ff0000, 2px -2px 0 #00ff00;
+                transform: translate(2px, 2px);
+            }
+            100% {
+                text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #00ff00;
+                transform: translate(0, 0);
+            }
+        }
+        .description {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #ff4500;
+            padding: 0 10%;
+        }
+        .contract-address {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+        .feed-santa {
+            margin: 60px auto;
+            font-size: 1.3em;
+        }
+        .feed-santa h2 {
+            color: #ff0000;
+            font-size: 1.8em;
+        }
+        .feed-santa form input {
+            font-size: 1em;
+            padding: 10px;
+            margin: 15px 0;
+            width: 60%;
+            border: 2px solid #00ffaa;
+            background-color: #0d0d0d;
+            color: #00ff00;
+        }
+        .feed-santa form button {
+            font-size: 1em;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #00ff00;
+            border: none;
+            cursor: pointer;
+        }
+        .voting-section {
+            margin-top: 60px;
+            font-size: 1.3em;
+            color: #00ffaa;
+        }
+        .voting-section h2 {
+            color: #ff0000;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .voting-section .vote-item {
+            margin: 15px auto;
+            padding: 15px;
+            width: 70%;
+            background-color: #0d0d0d;
+            border: 2px solid #00ffaa;
+            color: #00ff00;
+        }
+        .voting-section button {
+            font-size: 1em;
+            padding: 10px 15px;
+            margin-left: 10px;
+            color: #ffffff;
+            background-color: #00ff00;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            background-color: #111;
+            color: #888;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://x.com/SantaAI" target="_blank">Twitter</a>
+        <a href="https://t.me/SantaAI" target="_blank">Telegram</a>
+        <a href="#">Pumpfun</a>
+    </nav>
+    <div class="title">WELCOME TO SANTA AI</div>
+    <div class="ascii-art">
+        <!-- Paste your Santa ASCII art here -->
+    </div>
+    <div class="description">
+        The ultimate memecoin AI agent for the holidays. Naughty coins beware, SantaAI is here to troll or reward the crypto world.
+    </div>
+    <div class="contract-address">CA: TBA</div>
+    <div class="feed-santa">
+        <h2>Feed Santa</h2>
+        <p>Submit a project for SantaAI to evaluate:</p>
+        <form id="feed-santa-form">
+            <input type="url" id="santa-link" placeholder="Paste the project link here..." required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="voting-section">
+        <h2>Naughty or Nice List</h2>
+        <p>Vote for the next project SantaAI should troll or praise:</p>
+        <div id="voting-container">
+            <!-- Dynamic voting items will appear here -->
+        </div>
+    </div>
+    <footer>© 2024 SantaAI | Memes, chaos, and festive fun.</footer>
+    <script src="santa.js"></script>
+</body>
+</html>
