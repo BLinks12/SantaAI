@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SantaAI ($HOHO)</title>
+    <title>SantaAI ($SLEIGH)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
         body {
             font-family: 'VT323', monospace;
-            background-color: #0b1c0a;
+            background-color: #001a00;
             color: #ffffff;
             margin: 0;
             padding: 20px;
@@ -23,13 +23,13 @@
         }
         nav a {
             text-decoration: none;
-            color: #ff0000;
+            color: #ff4500;
         }
         .title {
             font-size: 3em;
             margin: 40px 0;
-            color: #ff4500;
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4500;
+            color: #ff0000;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #ffffff;
         }
         .ascii-art {
             white-space: pre;
@@ -67,6 +67,20 @@
             color: #ffffff;
             padding: 0 10%;
         }
+        .ai-functionality {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #001a00;
+            border: 3px solid #ff4500;
+            color: #00ff00;
+            font-size: 1.3em;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .ai-functionality h2 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
         .contract-address {
             margin-top: 30px;
             font-size: 1.5em;
@@ -87,7 +101,7 @@
             width: 60%;
             border: 2px solid #ff4500;
             background-color: #ffffff;
-            color: #0b1c0a;
+            color: #001a00;
         }
         .feed-santa form button {
             font-size: 1em;
@@ -111,7 +125,7 @@
             margin: 15px auto;
             padding: 15px;
             width: 70%;
-            background-color: #0b1c0a;
+            background-color: #001a00;
             border: 2px solid #00ff00;
             color: #ffffff;
         }
@@ -141,54 +155,22 @@
     </nav>
     <div class="title">WELCOME TO SANTA AI</div>
     <div class="ascii-art">
-          ..,,,,,,,,,,,,,,,,.. 
-                        ..,,;;;;;;;;;;;;;;;;;;;;;;;;;;,,. 
-                    .,::::;;;;aaaaaaaaaaaaaaaaaaaaaaaaaaa;;,,. 
-                .,;;,:::a@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@a, 
-              ,;;;;.,a@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@a 
-           ,;;;;%;.,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@a, 
-        ,;%;;;;%%;,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
-     ,;;%%;;;;;%%;;@@@@@@@@@@@@@@'%v%v%v%v%v%v%v%v%v%v%v%v`@@@@@@@@@ 
-   ,;;%%;;;;:;;;%;;@@@@@@@@@'%vvvvvvvvvnnnnnnnnnnnnnnnnvvvvvv%`@@@@' 
-  ,;%%;;;;;:;;;;;;;;@@@@@'%vvva@@@@@@@@avvnnnnnnnnnnvva@@@@@@@OOov, 
- ,;%;;;;;;:::;;;;;;;@@'OO%vva@@@@@@@@@@@@vvnnnnnnnnvv@@@@@@@@@@@Oov 
- ;%;;;;;;;:::;;;;;;;;'oO%vvn@@%nvvvvvvvv%nnnnnnnnnnnnn%vvvvvvnn%@Ov 
- ;;;;;;;;;:::;;;;;;::;oO%vvnnnn>>nn.   `nnnnnnnnnnnn>>nn.   `nnnvv' 
- ;;;;;;;;;:::;;;;;;::;oO%vvnnvvmmmmmmmmmmvvvnnnnnn;%mmmmmmmmmmmmvv, 
- ;;;;;;;;;:::;;;;;;::;oO%vvmmmmmmmmmmmmmmmmmvvnnnv;%mmmmmmmmmmmmmmmv, 
- ;;;;;;;;;;:;;;;;;::;;oO%vmmmmnnnnnnnnnnnnmmvvnnnvmm;%vvnnnnnnnnnmmmv 
-  `;%;;;;;;;:;;;;::;;o@@%vvmmnnnnnnnnnnnvnnnnnnnnnnmmm;%vvvnnnnnnmmmv 
-   `;;%%;;;;;:;;;::;.oO@@%vmmnnnnnnnnnvv%;nnnnnnnnnmmm;%vvvnnnnnnmmv' 
-     `;;;%%;;;:;;;::;.o@@%vvnnnnnnnnnnnvv%;nnnnnnnmm;%vvvnnnnnnnv%'@a. 
-      a`;;;%%;;:;;;::;.o@@%vvvvvvvvvvvvvaa@@@@@@@@@@@@aa%%vvvvv%%@@@@o. 
-     .@@o`;;;%;;;;;;::;,o@@@%vvvvvvva@@@@@@@@@@@@@@@@@@@@@avvvva@@@@@%O, 
-    .@@@@@Oo`;;;;;;;;::;o@@@@@@@@@@@@@@@@@@@@"""""""@@@@@@@@@@@@@@@@@OO@a 
-  .@@@@@@@@@OOo`;;;;;;:;o@@@@@@@@@@@@@@@@"           "@@@@@@@@@@@@@@oOO@@@, 
- .@@@@o@@@@@@@OOo`;;;;:;o,@@@@@@@@@@%vvvvvvvvvvvvvvvvvv%%@@@@@@@@@oOOO@@@@@, 
- @@@@o@@@@@@@@@OOo;::;'oOOooooooooOOOo%vvvvvvvvvvvvvv%oOOooooooooOOO@@@O@@@, 
- @@@oO@@@@@@@@@OOa@@@@@a,oOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOO@@@@Oo@@@ 
- @@@oO@@@@@@@OOa@@@@@@@@Oo,oO@@@@@@@@@@OOOOOOOOOOOOOO@@@@@@@@@@@@@@@@@@Oo@@@ 
- @@@oO@@@@@@OO@@@@@@@@@@@OO,oO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Oo@@@ 
- @@@@o@@@@@@OO@@@@@@@@@@OOO,oO@@@@@@@@@O@@@@@@@@@@@@@@@@@@@@@o@@@@@@@@@O@@@@ 
- @@@@@o@@@@@OOo@@@@@@@OOOO'oOO@@@@@@@@Oo@@@@@@@@@@@@O@@@@@@@@Oo@@@@@@@@@@@@a 
-`@@@@@@@O@@@OOOo`OOOOOOO'oOO@@@@@@@@@O@@@@@@@@@@@@@@@O@@@@@@@@Oo@@@@@@@@@@@@ 
- `@@@@@OO@@@@@OOOooooooooOO@@@@@@@@@@@@@@@@@@@@@@@@@@Oo@@@@@@@Oo@@@@@@oO@@@@ 
-   `@@@OO@@@@@@@@@@@@@@@@@@@O@@@@@@@@@@@@@@@@@@@@@@@@Oo@@@@@@@O@@@@@@@oO@@@' 
-      `@@`O@@@@@@@@@@@@@@@@@@@Oo@@@@@@@@@@@@@@@@@@@@@@Oo@@@@@@@@@@@@@@@O@@@' 
-        `@ @@@@@@@@@@@@@@@@@@@OOo@@@@@@@@@@@@@@@@@@@@@O@@@@@@@@@@@@@@@'@@' 
-           `@@@@@@@@@@@@@@@@@@OOo@@@@@@@@@@@@@@@@@@@@O@@@@@@@@@@@@@@@ a' 
-               `@@@@@@@@@@@@@@OOo@@@@@@@@@@@@@@@@@@@@@@@@Oo@@@@@@@@' 
-                  `@@@@@@@@@@@Oo@@@@@@@@@@@@@@@@@@@@@@@@@Oo@@@@' 
-                      `@@@@@@Oo@@@@O@@@@@@@@@@@@@@@@@@@'o@@' 
-                          `@@@@@@@@oO@@@@@@@@@@@@@@@@@ a' 
-                              `@@@@@oO@@@@@@@@@@@@@@' ' 
-                                '@@@o'`@@@@@@@@' 
-                                 @'   .@@@@' 
-                                     @@' 
-                                   @'
+        <!-- Paste your Santa ASCII art here -->
     </div>
     <div class="description">
         The ultimate memecoin AI agent for the holidays. Naughty coins beware, SantaAI is here to troll or reward the crypto world.
+    </div>
+    <div class="ai-functionality">
+        <h2>How SantaAI Works</h2>
+        <p>
+            🎅 SantaAI uses advanced AI to analyze crypto projects and influencers submitted by the community.  
+            🎄 **Step 1:** Feed Santa with links to projects or people you want analyzed.  
+            ❄️ **Step 2:** Vote to decide if they're Naughty or Nice.  
+            🎁 **Step 3:** SantaAI delivers memes, praise, or FUD based on the votes.
+        </p>
+        <p>
+            Join the fun and let SantaAI troll the crypto world or spread festive cheer with AI-generated chaos.
+        </p>
     </div>
     <div class="contract-address">CA: TBA</div>
     <div class="feed-santa">
