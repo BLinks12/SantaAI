@@ -1,12 +1,12 @@
-const votes = {}; // Store votes in memory
+const votes = {}; // Store votes
 
-// Fetch votes dynamically
-async function fetchVotes() {
+// Fetch votes dynamically (emulating backend fetch for now)
+function fetchVotes() {
     return votes;
 }
 
-// Add or increment votes for a link
-async function sendVote(link) {
+// Submit a vote for a project link
+function sendVote(link) {
     if (votes[link]) {
         votes[link]++;
     } else {
@@ -15,16 +15,18 @@ async function sendVote(link) {
 }
 
 // Update the voting section dynamically
-async function updateVotingSection() {
+function updateVotingSection() {
     const votingContainer = document.getElementById('voting-container');
 
-    // Sort projects by votes
-    const sortedProjects = Object.entries(votes)
+    // Sort the projects by votes
+    const sortedProjects = Object.entries(fetchVotes())
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3);
 
-    // Clear and re-render the voting section
+    // Clear existing content
     votingContainer.innerHTML = '';
+
+    // Populate the voting section
     sortedProjects.forEach(([link, voteCount]) => {
         const voteItem = document.createElement('div');
         voteItem.classList.add('vote-item');
@@ -37,8 +39,8 @@ async function updateVotingSection() {
     });
 }
 
-// Handle the form submission
-document.getElementById('feed-santa-form').addEventListener('submit', async function (event) {
+// Handle new project submission
+document.getElementById('feed-santa-form').addEventListener('submit', function (event) {
     event.preventDefault();
     const linkInput = document.getElementById('santa-link');
     const link = linkInput.value.trim();
@@ -48,17 +50,17 @@ document.getElementById('feed-santa-form').addEventListener('submit', async func
         return;
     }
 
-    await sendVote(link);
-    await updateVotingSection();
+    sendVote(link);
+    updateVotingSection();
 
-    linkInput.value = ''; // Clear the input field
+    linkInput.value = ''; // Clear input field
 });
 
-// Voting button handler
-async function vote(link) {
-    await sendVote(link);
-    await updateVotingSection();
+// Vote for a project
+function vote(link) {
+    sendVote(link);
+    updateVotingSection();
 }
 
-// Initialize the voting section
+// Initialize the voting section on page load
 updateVotingSection();
