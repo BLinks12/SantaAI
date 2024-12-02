@@ -1,26 +1,21 @@
-const API_URL = 'http://localhost:3000'; // Update this to your backend URL if hosted
-const votes = {}; // Store votes
+const votes = {}; // Store votes in memory
 
-// Fetch votes from backend
+// Fetch votes dynamically
 async function fetchVotes() {
-    const response = await fetch(`${API_URL}/votes`);
-    return await response.json();
+    return votes;
 }
 
-// Send a vote to the backend
+// Add or increment votes for a link
 async function sendVote(link) {
-    await fetch(`${API_URL}/vote`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ link }),
-    });
+    if (votes[link]) {
+        votes[link]++;
+    } else {
+        votes[link] = 1;
+    }
 }
 
-// Update voting section dynamically
+// Update the voting section dynamically
 async function updateVotingSection() {
-    const votes = await fetchVotes();
     const votingContainer = document.getElementById('voting-container');
 
     // Sort projects by votes
@@ -28,6 +23,7 @@ async function updateVotingSection() {
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3);
 
+    // Clear and re-render the voting section
     votingContainer.innerHTML = '';
     sortedProjects.forEach(([link, voteCount]) => {
         const voteItem = document.createElement('div');
@@ -41,24 +37,28 @@ async function updateVotingSection() {
     });
 }
 
-// Handle form submission
-document.getElementById('feed-santa-form').addEventListener('submit', async (event) => {
+// Handle the form submission
+document.getElementById('feed-santa-form').addEventListener('submit', async function (event) {
     event.preventDefault();
+    const linkInput = document.getElementById('santa-link');
+    const link = linkInput.value.trim();
 
-    const link = document.getElementById('santa-link').value.trim();
-    if (!link) return alert('Enter a valid URL.');
+    if (!link) {
+        alert('Please enter a valid URL.');
+        return;
+    }
 
     await sendVote(link);
     await updateVotingSection();
 
-    document.getElementById('santa-link').value = '';
+    linkInput.value = ''; // Clear the input field
 });
 
-// Vote button handler
+// Voting button handler
 async function vote(link) {
     await sendVote(link);
     await updateVotingSection();
 }
 
-// Initialize voting section on load
+// Initialize the voting section
 updateVotingSection();
